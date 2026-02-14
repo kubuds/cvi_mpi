@@ -145,6 +145,8 @@ typedef struct _ISP_FSHDR_ATTR_S {
 #define DP_THR_LUT_NUM (5)
 
 typedef struct _ISP_DP_DYNAMIC_MANUAL_ATTR_S {
+	CVI_U16 DarkDefectThresh[DP_THR_LUT_NUM]; /*RW; Range: [0x0, 0xfff]*/
+	CVI_U16 BrightDefectThresh[DP_THR_LUT_NUM]; /*RW; Range: [0x0, 0xfff]*/
 	CVI_U8 DefectCnt1; /*RW; Range: [0x0, 0x10]*/
 	CVI_U8 DefectCnt2; /*RW; Range: [0x0, 0x10]*/
 	CVI_U8 AdvMode; /*RW; Range: [0x0, 0x1]*/
@@ -152,6 +154,8 @@ typedef struct _ISP_DP_DYNAMIC_MANUAL_ATTR_S {
 } ISP_DP_DYNAMIC_MANUAL_ATTR_S;
 
 typedef struct _ISP_DP_DYNAMIC_AUTO_ATTR_S {
+	CVI_U16 DarkDefectThresh[DP_THR_LUT_NUM][ISP_AUTO_ISO_STRENGTH_NUM]; /*RW; Range: [0x0, 0xfff]*/
+	CVI_U16 BrightDefectThresh[DP_THR_LUT_NUM][ISP_AUTO_ISO_STRENGTH_NUM]; /*RW; Range: [0x0, 0xfff]*/
 	CVI_U8 DefectCnt1[ISP_AUTO_ISO_STRENGTH_NUM]; /*RW; Range: [0x0, 0x10]*/
 	CVI_U8 DefectCnt2[ISP_AUTO_ISO_STRENGTH_NUM]; /*RW; Range: [0x0, 0x10]*/
 	CVI_U8 AdvMode[ISP_AUTO_ISO_STRENGTH_NUM]; /*RW; Range: [0x0, 0x1]*/
@@ -162,8 +166,6 @@ typedef struct _ISP_DP_DYNAMIC_ATTR_S {
 	CVI_BOOL Enable; /*RW; Range: [0x0, 0x1]*/
 	ISP_OP_TYPE_E enOpType; /*RW; Range: [0x0, 0x1]*/
 	CVI_U8 UpdateInterval; /*RW; Range: [0x0, 0xff]*/
-	CVI_U16 DarkDefectThresh[DP_THR_LUT_NUM]; /*RW; Range: [0x0, 0xfff]*/
-	CVI_U16 BrightDefectThresh[DP_THR_LUT_NUM]; /*RW; Range: [0x0, 0xfff]*/
 	CVI_U16 DarkDefectThreshOffset; /*RW; Range: [0x0, 0xfff]*/
 	CVI_U16 BrightDefectThreshOffset; /*RW; Range: [0x0, 0xfff]*/
 	CVI_U8 TransitionWeight; /*RW; Range: [0x0, 0xff]*/
