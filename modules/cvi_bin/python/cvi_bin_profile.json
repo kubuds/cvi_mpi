@@ -210,6 +210,14 @@
                     {
                         "ID": 3,
                         "type":["unsigned", "char"], "name":"AvgMode", "dims":[], "children": []
+                    },
+                    {
+                        "ID": 4,
+                        "type":["unsigned", "short"], "name":"DarkDefectThresh", "dims":["5"], "children": []
+                    },
+                    {
+                        "ID": 5,
+                        "type":["unsigned", "short"], "name":"BrightDefectThresh", "dims":["5"], "children": []
                     }
                 ]
             },
@@ -231,6 +239,14 @@
                     {
                         "ID": 3,
                         "type":["unsigned", "char"], "name":"AvgMode", "dims":["16"], "children": []
+                    },
+                    {
+                        "ID": 4,
+                        "type":["unsigned", "short"], "name":"DarkDefectThresh", "dims":["5", "16"], "children": []
+                    },
+                    {
+                        "ID": 5,
+                        "type":["unsigned", "short"], "name":"BrightDefectThresh", "dims":["5", "16"], "children": []
                     }
                 ]
             }
